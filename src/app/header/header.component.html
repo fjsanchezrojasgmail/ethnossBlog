@@ -1,0 +1,52 @@
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                    <h1><a href="/home" class="title">Ethnoss Blog</a></h1>
+
+            </div><!--Title-->
+            
+            <div class="col-md-6">
+
+                
+
+                <div class="menu-buttons">
+
+                    
+                    <div *ngIf="!isAuthenticated">
+
+
+                        <a href="/login" class="login btn btn-primary">Login</a>
+                
+                        <a href="/register" class="register btn btn-primary">Register</a>
+
+                    </div>
+
+                        <div *ngIf="isAuthenticated">
+
+                            <button class="logout btn btn-primary" (click)="myDialog.show()">Logout</button>
+                        
+                            <a href="/add-post" class="new-post btn btn-primary">Add Post</a>
+
+
+                        </div>
+
+
+                </div>
+
+                <div class="dialog">
+                <dialog #myDialog>
+                    <div class="txtDialog">
+                       Estas seguro de que quieres salir?
+                    </div>
+                    <div>
+                        <button class="btnDialog btn btn-primary" (click)="myDialog.close()">No</button>
+                        <button class="btnDialog btn btn-primary" (click)="onLogout();myDialog.close()">Si</button>
+                    </div>
+                 </dialog>
+                </div>
+
+            </div><!--Login and Register-->
+        </div>
+    </div>
+</div>
