@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-8">
-        <h1 class="blog-title">{{post.title}}</h1>
+        <h1 class="blog-title">{{ postTitle }}</h1>
         <span>
-                  <p>by {{post.username}}</p>
+                  <p>by {{ postAuthor }}</p>
               </span>
         <hr>
-        <p [innerHTML]="post.content"></p>
+        <p> {{ postContent }} - {{ postImageUrl }} </p>
         <hr>
       </div>
     </div>

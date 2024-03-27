@@ -6,7 +6,12 @@
           <div>
             <i class="fas fa-user"></i> Author: <p>{{post.username}}</p>
           </div>
-          <p [innerHTML]="post.content"></p>
+          <div class="article">
+              <p> {{post.content}} - {{post.imageurl}}</p>
+              <div class="imagen">
+                  <img src="./../../assets/images/Mezquita-de-Toledo.jpg" alt="Imagen del articulo">
+              </div>
+          </div>
           <div>
             <button class="read-more btn btn-lg btn-primary"><a href="/posts/{{post.id}}">Read More</a></button>
           </div>

@@ -26,6 +26,10 @@ import {PostPayload} from '../add-post/post-payload';
 export class PostComponent implements OnInit {
   public post!: PostPayload;
   public permaLink!: Number;
+  public postTitle: string = '';
+  public postAuthor: string = '';
+  public postContent: string = '';
+  public postImageUrl: string = '';
 
   constructor (
     private router: ActivatedRoute,
@@ -40,6 +44,10 @@ export class PostComponent implements OnInit {
 
     this.postService.getPost(this.permaLink).subscribe((data: PostPayload) => {
       this.post = data;
+      this.postTitle = data.title;
+      this.postAuthor = data.username;
+      this.postContent = data.content;
+      this.postImageUrl = data.imageurl;
     },(err: any) => {
       console.log('Failure Response: ', err);
     })

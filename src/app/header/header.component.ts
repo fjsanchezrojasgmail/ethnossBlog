@@ -18,11 +18,11 @@
 /* eslint-disable @typescript-eslint/lines-between-class-members */
 /* eslint-disable padded-blocks */
 /* eslint-disable @typescript-eslint/no-useless-constructor */
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -55,6 +55,7 @@ export class HeaderComponent implements OnInit{
     this.display = false;
     this.router.navigateByUrl("/login");
   }
+  
   showDialog() {
     this.display = true;
   }
